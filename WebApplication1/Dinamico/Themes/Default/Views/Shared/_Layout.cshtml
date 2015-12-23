@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	@{ Html.RenderPartial("LayoutPartials/Head"); }
+	@{
+		Content.PrependDefinition(re =>
+		{
+			re.Tab("Content", "Content");
+			re.PublishedRange().Container("Metadata");
+		});
+	 }
+	@if (IsSectionDefined("head")) { @RenderSection("head") }
+</head>
+<body>
+	<div id="wrapper" class="clearfix">
+	@if (IsSectionDefined("page"))
+	{
+		@RenderSection("page")
+	}
+	else
+	{
+	<div id="top">@{ Html.RenderPartial("LayoutPartials/Top"); }</div>
+	<div class="container">
+		<div id="header">@{ Html.RenderPartial("LayoutPartials/Header"); }</div>
+		<div id="page">
+			@if (IsSectionDefined("main"))
+			{
+				@RenderSection("main")
+			}
+			else
+			{
+			<div id="main">
+				@{ Html.RenderPartial("LayoutPartials/PreContent"); }
+				<div class="row">
+					<div id="content" class="col-md-8 col-lg-9" role="main">
+						@RenderBody()
+					</div>
+					<div id="aside" class="col-md-4 col-lg-3" role="complementary">
+					@if (IsSectionDefined("Aside"))
+					{
+						@RenderSection("Aside")
+					}
+					else
+					{
+						Html.DroppableZone("Aside").Render();
+					}
+					</div>
+				</div>
+				@{ Html.RenderPartial("LayoutPartials/PostContent"); }
+			</div>
+			}
+		</div>
+		<div id="footer">@{ Html.RenderPartial("LayoutPartials/Footer"); }</div>
+	</div>
+ }
+	 </div>
+	@{ Html.RenderPartial("LayoutPartials/FooterScripts"); }
+	@{ Html.Zone(Content.Traverse.StartPage, "Scripts").Render(); }
+</body>
+</html>

@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34782BCC-BA46-4591-ADFD-9CBD911FD874}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="N2, Version=2.9.6.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\N2CMS.Library.2.9.6.2\lib\net45\N2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="N2.Extensions, Version=2.9.6.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\N2CMS.Management.NoZip.2.9.6.2\lib\N2.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="N2.Management, Version=2.9.6.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\N2CMS.Management.NoZip.2.9.6.2\lib\N2.Management.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="N2.Razor, Version=2.9.6.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\N2CMS.Razor.2.9.6.2\lib\net45\N2.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="N2.ReusableParts, Version=2.9.5.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\N2CMS.ReusableParts.2.9.6.2\lib\net45\N2.ReusableParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CmsConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\RegionDispatcherController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Dinamico\Controllers\ContentPagesController.cs" />
+    <Compile Include="Dinamico\Controllers\ContentPartsController.cs" />
+    <Compile Include="Dinamico\Controllers\FallbackController.cs" />
+    <Compile Include="Dinamico\Controllers\FreeFormController.cs" />
+    <Compile Include="Dinamico\Controllers\LanguageIntersectionController.cs" />
+    <Compile Include="Dinamico\Controllers\MembershipController.cs" />
+    <Compile Include="Dinamico\Controllers\RedirectController.cs" />
+    <Compile Include="Dinamico\Controllers\StartPageController.cs" />
+    <Compile Include="Dinamico\Controllers\TestController.cs" />
+    <Compile Include="Dinamico\Defaults.cs" />
+    <Compile Include="Dinamico\GlobalMvcStarter.cs" />
+    <Compile Include="Dinamico\Models\AccountModels.cs" />
+    <Compile Include="Dinamico\Models\ContentPage.cs" />
+    <Compile Include="Dinamico\Models\ContentPart.cs" />
+    <Compile Include="Dinamico\Models\FreeForm.cs" />
+    <Compile Include="Dinamico\Models\LanguageIntersection.cs" />
+    <Compile Include="Dinamico\Models\PageModelBase.cs" />
+    <Compile Include="Dinamico\Models\PartModelBase.cs" />
+    <Compile Include="Dinamico\Models\Redirect.cs" />
+    <Compile Include="Dinamico\Models\StartPage.cs" />
+    <Compile Include="Dinamico\Registrations\FreeFormRegistration.cs" />
+    <Compile Include="Dinamico\Registrations\PermissionDeniedHandler.cs" />
+    <Compile Include="Dinamico\Registrations\RecursiveZoneAdapter.cs" />
+    <Compile Include="Dinamico\Registrations\StartPageRegistration.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Admin\RegionDispatcherViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\dinamico.mdf" />
+    <Content Include="App_Data\dinamico_log.ldf">
+      <DependentUpon>dinamico.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Dinamico\N2\readme.txt" />
+    <Content Include="Dinamico\readme.txt" />
+    <Content Include="Dinamico\Themes\Default\Content\Site.css" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\css\bootstrap-theme.css" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\css\bootstrap-theme.min.css" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\css\bootstrap.css" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\css\bootstrap.min.css" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\js\bootstrap.js" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\js\bootstrap.min.js" />
+    <Content Include="Dinamico\Themes\Default\lib\jquery\jquery-1.10.2.js" />
+    <Content Include="Dinamico\Themes\Default\lib\jquery\jquery-1.10.2.min.js" />
+    <Content Include="Dinamico\Themes\Default\lib\jquery\jquery.highlight-3.js" />
+    <Content Include="Dinamico\Themes\Default\Scripts\Site.js" />
+    <Content Include="Dinamico\Themes\Default\Thumbnail.JPG" />
+    <Content Include="Dinamico\Themes\MyTheme\Content\Site.css" />
+    <Content Include="Dinamico\Themes\MyTheme\readme.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="N2\App\Framed\CustomTranslations.html" />
+    <Content Include="N2\App\Framed\Framed.js" />
+    <Content Include="N2\App\i18n\en.js" />
+    <Content Include="N2\App\Js\Controllers.js" />
+    <Content Include="N2\App\Js\Directives.js" />
+    <Content Include="N2\App\Js\Services.js" />
+    <Content Include="N2\App\Partials\ContentAdd.html" />
+    <Content Include="N2\App\Partials\ContentBranch.html" />
+    <Content Include="N2\App\Partials\ContentContextMenu.html" />
+    <Content Include="N2\App\Partials\ContentInfo.html" />
+    <Content Include="N2\App\Partials\ContentInfoDetails.html" />
+    <Content Include="N2\App\Partials\ContentLanguage.html" />
+    <Content Include="N2\App\Partials\ContentPreview.html" />
+    <Content Include="N2\App\Partials\ContentPublishSchedule.html" />
+    <Content Include="N2\App\Partials\ContentScheduleDialog.html" />
+    <Content Include="N2\App\Partials\ContentSearch.html" />
+    <Content Include="N2\App\Partials\ContentTransitions.html" />
+    <Content Include="N2\App\Partials\ContentTree.html" />
+    <Content Include="N2\App\Partials\ContentVersions.html" />
+    <Content Include="N2\App\Partials\Footer.html" />
+    <Content Include="N2\App\Partials\FrameAction.html" />
+    <Content Include="N2\App\Partials\Framework.html" />
+    <Content Include="N2\App\Partials\Loading.html" />
+    <Content Include="N2\App\Partials\Main.html" />
+    <Content Include="N2\App\Partials\Management.html" />
+    <Content Include="N2\App\Partials\ManagementConfirm.html" />
+    <Content Include="N2\App\Partials\Menu.html" />
+    <Content Include="N2\App\Partials\MenuNode.html" />
+    <Content Include="N2\App\Partials\MenuNodeLastChild.html" />
+    <Content Include="N2\App\Partials\MenuSubNode.html" />
+    <Content Include="N2\App\Partials\Messages.html" />
+    <Content Include="N2\App\Preview\Preview.css" />
+    <Content Include="N2\App\Preview\Preview.js" />
+    <Content Include="N2\App\Preview\PreviewBar.html" />
+    <Content Include="N2\App\Preview\PreviewBoostrapper.js" />
+    <Content Include="N2\Content\Activity\RecentActivity.ascx" />
+    <Content Include="N2\Content\AffectedItems.ascx" />
+    <Content Include="N2\Content\AvailableZones.ascx" />
+    <Content Include="N2\Content\Copy.aspx" />
+    <Content Include="N2\Content\Default.aspx" />
+    <Content Include="N2\Content\Delete.aspx" />
+    <Content Include="N2\Content\DiscardPreview.aspx" />
+    <Content Include="N2\Content\Edit.aspx" />
+    <Content Include="N2\Content\EditRecursive.aspx" />
+    <Content Include="N2\Content\EditSingle.aspx" />
+    <Content Include="N2\Content\Export\BulkEditing.aspx" />
+    <Content Include="N2\Content\Export\CsvImport.ascx" />
+    <Content Include="N2\Content\Export\Default.aspx" />
+    <Content Include="N2\Content\Export\Export.aspx" />
+    <Content Include="N2\Content\Export\ItemXmlImport.ascx" />
+    <Content Include="N2\Content\Globalization\Default.aspx" />
+    <Content Include="N2\Content\Globalization\LanguageMenu.ascx" />
+    <Content Include="N2\Content\Globalization\Languages.ascx" />
+    <Content Include="N2\Content\Globalization\Translate.aspx" />
+    <Content Include="N2\Content\ItemInfo.ascx" />
+    <Content Include="N2\Content\LinkTracker\Default.aspx" />
+    <Content Include="N2\Content\LinkTracker\UpdateReferences.aspx" />
+    <Content Include="N2\Content\Move.aspx" />
+    <Content Include="N2\Content\Navigation\ContextMenu.ascx" />
+    <Content Include="N2\Content\Navigation\MediaBrowser.aspx" />
+    <Content Include="N2\Content\Navigation\MediaBrowser.js" />
+    <Content Include="N2\Content\Navigation\Search.aspx" />
+    <Content Include="N2\Content\Navigation\Tree.aspx" />
+    <Content Include="N2\Content\Navigation\Tree.js" />
+    <Content Include="N2\Content\New.aspx" />
+    <Content Include="N2\Content\Paste.aspx" />
+    <Content Include="N2\Content\PublishPreview.aspx" />
+    <Content Include="N2\Content\ReferencingItems.ascx" />
+    <Content Include="N2\Content\Security\Default.aspx" />
+    <Content Include="N2\Content\Settings\Default.aspx" />
+    <Content Include="N2\Content\Settings\SettingsEditor.ascx" />
+    <Content Include="N2\Content\Templates\Default.aspx" />
+    <Content Include="N2\Content\Trash\Default.aspx" />
+    <Content Include="N2\Content\Versions\Default.aspx" />
+    <Content Include="N2\Content\Versions\RecentVersions.ascx" />
+    <Content Include="N2\Content\Wizard\Default.aspx" />
+    <Content Include="N2\Default.aspx" />
+    <Content Include="N2\Empty.aspx" />
+    <Content Include="N2\Externals\External.ascx" />
+    <Content Include="N2\Files\Crop.aspx" />
+    <Content Include="N2\Files\Css\Files.css" />
+    <Content Include="N2\Files\Css\Jcrop.gif" />
+    <Content Include="N2\Files\Css\jquery.Jcrop.min.css" />
+    <Content Include="N2\Files\Default.aspx" />
+    <Content Include="N2\Files\FileSystem\Directory.aspx" />
+    <Content Include="N2\Files\FileSystem\Export.aspx" />
+    <Content Include="N2\Files\FileSystem\File.aspx" />
+    <Content Include="N2\Files\FileSystem\FileUpload.ascx" />
+    <Content Include="N2\Files\FileSystem\FileUpload.js" />
+    <Content Include="N2\Files\Js\FileSelection.js" />
+    <Content Include="N2\Files\Js\jquery.color.js" />
+    <Content Include="N2\Files\Js\jquery.Jcrop.min.js" />
+    <Content Include="N2\Files\Js\jquery.MultiFile.js" />
+    <Content Include="N2\Files\Rebuild.aspx" />
+    <Content Include="N2\Installation\Begin\Default.aspx" />
+    <Content Include="N2\Installation\Default.aspx" />
+    <Content Include="N2\Installation\Diagnose.aspx" />
+    <Content Include="N2\Installation\Fix.aspx" />
+    <Content Include="N2\Installation\FixClass.aspx" />
+    <Content Include="N2\Installation\Rebase.aspx" />
+    <Content Include="N2\Installation\Relations.aspx" />
+    <Content Include="N2\Installation\Upgrade.aspx" />
+    <Content Include="N2\Installation\UpgradeVersions.aspx" />
+    <Content Include="N2\Login.aspx" />
+    <Content Include="N2\Myself\Activity.ascx" />
+    <Content Include="N2\Myself\EditPassword.aspx" />
+    <Content Include="N2\Myself\Languages.ascx" />
+    <Content Include="N2\Myself\Root.aspx" />
+    <Content Include="N2\Myself\Statistics.ascx" />
+    <Content Include="N2\Myself\Wizards.ascx" />
+    <Content Include="N2\Resources\bootstrap-components\bootstrap-datepicker.css" />
+    <Content Include="N2\Resources\bootstrap-components\bootstrap-datepicker.js" />
+    <Content Include="N2\Resources\bootstrap-components\bootstrap-timepicker.css" />
+    <Content Include="N2\Resources\bootstrap-components\bootstrap-timepicker.js" />
+    <Content Include="N2\Resources\chosen_v1.1.0\chosen-sprite%402x.png" />
+    <Content Include="N2\Resources\chosen_v1.1.0\chosen-sprite.png" />
+    <Content Include="N2\Resources\chosen_v1.1.0\chosen.css" />
+    <Content Include="N2\Resources\chosen_v1.1.0\chosen.jquery.js" />
+    <Content Include="N2\Resources\chosen_v1.1.0\chosen.jquery.min.js" />
+    <Content Include="N2\Resources\chosen_v1.1.0\chosen.min.css" />
+    <Content Include="N2\Resources\chosen_v1.1.0\index.html" />
+    <Content Include="N2\Resources\chosen_v1.1.0\options.html" />
+    <Content Include="N2\Resources\ckeditor\config.js" />
+    <Content Include="N2\Resources\Css\all.css" />
+    <Content Include="N2\Resources\Css\default.css" />
+    <Content Include="N2\Resources\Css\edit.css" />
+    <Content Include="N2\Resources\Css\editor.css" />
+    <Content Include="N2\Resources\Css\exportImport.css" />
+    <Content Include="N2\Resources\Css\framed.css" />
+    <Content Include="N2\Resources\Css\Globalization.css" />
+    <Content Include="N2\Resources\Css\IE6.css" />
+    <Content Include="N2\Resources\Css\jquery.multiselect.css" />
+    <Content Include="N2\Resources\Css\jquery.multiselect.filter.css" />
+    <Content Include="N2\Resources\Css\mediaBrowser.css" />
+    <Content Include="N2\Resources\Css\n2.css" />
+    <Content Include="N2\Resources\Css\Parts.css" />
+    <Content Include="N2\Resources\Css\Root.css" />
+    <Content Include="N2\Resources\Css\smoothness\images\animated-overlay.gif" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="N2\Resources\Css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="N2\Resources\Css\smoothness\jquery-ui-1.8.22.dialog.css" />
+    <Content Include="N2\Resources\Css\smoothness\jquery-ui-1.8.22.full.css" />
+    <Content Include="N2\Resources\Css\TabPanel.css" />
+    <Content Include="N2\Resources\Css\themes\choc.css" />
+    <Content Include="N2\Resources\Css\themes\default.css" />
+    <Content Include="N2\Resources\Css\themes\icms.css" />
+    <Content Include="N2\Resources\Css\themes\ink.css" />
+    <Content Include="N2\Resources\Css\tree.css" />
+    <Content Include="N2\Resources\icons\default.html" />
+    <Content Include="N2\Resources\icons\flags.css" />
+    <Content Include="N2\Resources\icons\flags.png" />
+    <Content Include="N2\Resources\icons\glyphicons.css" />
+    <Content Include="N2\Resources\icons\glyphicons.png" />
+    <Content Include="N2\Resources\icons\silk.css" />
+    <Content Include="N2\Resources\icons\silk.png" />
+    <Content Include="N2\Resources\img\ajax-loader.gif" />
+    <Content Include="N2\Resources\img\arrow-down.png" />
+    <Content Include="N2\Resources\img\bg.gif" />
+    <Content Include="N2\Resources\img\bg_00020.png" />
+    <Content Include="N2\Resources\img\bg_00050.png" />
+    <Content Include="N2\Resources\img\bg_fff20.png" />
+    <Content Include="N2\Resources\img\bg_fff50.png" />
+    <Content Include="N2\Resources\img\book_previous.gif" />
+    <Content Include="N2\Resources\img\bullet_arrow_down.gif" />
+    <Content Include="N2\Resources\img\bullet_star.gif" />
+    <Content Include="N2\Resources\img\darken10.png" />
+    <Content Include="N2\Resources\img\darken25.png" />
+    <Content Include="N2\Resources\img\fieldset_bg.png" />
+    <Content Include="N2\Resources\img\framed_bg.gif" />
+    <Content Include="N2\Resources\img\framed_opener.gif" />
+    <Content Include="N2\Resources\img\framed_toolbar.gif" />
+    <Content Include="N2\Resources\img\framed_top.gif" />
+    <Content Include="N2\Resources\img\grabber.png" />
+    <Content Include="N2\Resources\img\grid_alt.gif" />
+    <Content Include="N2\Resources\img\gripper.gif" />
+    <Content Include="N2\Resources\img\lighten10.png" />
+    <Content Include="N2\Resources\img\lighten25.png" />
+    <Content Include="N2\Resources\img\lighten5.png" />
+    <Content Include="N2\Resources\img\login_bg.gif" />
+    <Content Include="N2\Resources\img\login_logo.png" />
+    <Content Include="N2\Resources\img\login_panel.gif" />
+    <Content Include="N2\Resources\img\logo.png" />
+    <Content Include="N2\Resources\img\minus.png" />
+    <Content Include="N2\Resources\img\n2.png" />
+    <Content Include="N2\Resources\img\part_bg.png" />
+    <Content Include="N2\Resources\img\pencil.png" />
+    <Content Include="N2\Resources\img\plus.png" />
+    <Content Include="N2\Resources\img\search.png" />
+    <Content Include="N2\Resources\img\separator.png" />
+    <Content Include="N2\Resources\img\shading.png" />
+    <Content Include="N2\Resources\img\shading_blue.png" />
+    <Content Include="N2\Resources\img\shading_green.png" />
+    <Content Include="N2\Resources\img\shading_purple.png" />
+    <Content Include="N2\Resources\img\sliding-loader.png" />
+    <Content Include="N2\Resources\img\smallico\clock.png" />
+    <Content Include="N2\Resources\img\smallico\close_2.png" />
+    <Content Include="N2\Resources\img\smallico\home.png" />
+    <Content Include="N2\Resources\img\splitter.gif" />
+    <Content Include="N2\Resources\img\tabs_base.gif" />
+    <Content Include="N2\Resources\img\tabs_begin.gif" />
+    <Content Include="N2\Resources\img\tab_button_bg.png" />
+    <Content Include="N2\Resources\img\tab_end.gif" />
+    <Content Include="N2\Resources\img\tab_selected.gif" />
+    <Content Include="N2\Resources\img\toolarea_bg.gif" />
+    <Content Include="N2\Resources\img\toolbar_bg.gif" />
+    <Content Include="N2\Resources\img\toolbar_button_bg.png" />
+    <Content Include="N2\Resources\img\toolbar_button_bg_hover.png" />
+    <Content Include="N2\Resources\img\toolitem_separator.gif" />
+    <Content Include="N2\Resources\img\tools.png" />
+    <Content Include="N2\Resources\img\treeview\collapsable-last.gif" />
+    <Content Include="N2\Resources\img\treeview\collapsable.gif" />
+    <Content Include="N2\Resources\img\treeview\expandable-last.gif" />
+    <Content Include="N2\Resources\img\treeview\expandable.gif" />
+    <Content Include="N2\Resources\img\treeview\leaf-last.gif" />
+    <Content Include="N2\Resources\img\treeview\leaf.gif" />
+    <Content Include="N2\Resources\img\treeview\root.gif" />
+    <Content Include="N2\Resources\img\treeview\spacer.gif" />
+    <Content Include="N2\Resources\img\treeview\spinner.gif" />
+    <Content Include="N2\Resources\img\tv\tv-collapsable-last.gif" />
+    <Content Include="N2\Resources\img\tv\tv-collapsable.gif" />
+    <Content Include="N2\Resources\img\tv\tv-expandable-last.gif" />
+    <Content Include="N2\Resources\img\tv\tv-expandable.gif" />
+    <Content Include="N2\Resources\img\tv\tv-item-last.gif" />
+    <Content Include="N2\Resources\img\tv\tv-item.gif" />
+    <Content Include="N2\Resources\img\ui\sprite.png" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\css\jquery.fileupload-ui.css" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\css\style.css" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\app.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.fileupload-angular.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.fileupload-audio.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.fileupload-image.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.fileupload-process.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.fileupload-ui.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.fileupload-validate.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.fileupload-video.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.fileupload.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\jquery.iframe-transport.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\main.js" />
+    <Content Include="N2\Resources\jQuery-File-Upload-8.5.0\js\vendor\jquery.ui.widget.js" />
+    <Content Include="N2\Resources\Js\ContextMenu.js" />
+    <Content Include="N2\Resources\Js\EditableTags.js" />
+    <Content Include="N2\Resources\Js\frameInteraction.js" />
+    <Content Include="N2\Resources\Js\jquery-1.11.0.js" />
+    <Content Include="N2\Resources\Js\jquery-1.11.0.min.js" />
+    <Content Include="N2\Resources\Js\jquery.editableThemeSelection.js" />
+    <Content Include="N2\Resources\Js\less-1.4.1.min.js" />
+    <Content Include="N2\Resources\Js\MediaSelection.js" />
+    <Content Include="N2\Resources\Js\n2.js" />
+    <Content Include="N2\Resources\Js\parts.js" />
+    <Content Include="N2\Resources\Js\plugins\aaa.js" />
+    <Content Include="N2\Resources\Js\plugins\date.js" />
+    <Content Include="N2\Resources\Js\plugins\hogan-2.0.0.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.cookie.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.datePicker.min-2.1.1.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.layout-latest.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2autocomplete.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2contextmenu-0.3.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2datepicker.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2dimmable.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2expandable.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2expandableBox.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2glow.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2keyboard.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2name.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2optionmenu.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2revealer.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.n2tabs.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.SimpleTree.js" />
+    <Content Include="N2\Resources\Js\plugins\jquery.splitter.js" />
+    <Content Include="N2\Resources\Js\plugins\n2.autosave.js" />
+    <Content Include="N2\Resources\Js\plugins\n2.js" />
+    <Content Include="N2\Resources\Js\UrlSelection.js" />
+    <Content Include="N2\Resources\KeepAlive\ping.aspx" />
+    <Content Include="N2\Resources\mediaelement-js\background.png" />
+    <Content Include="N2\Resources\mediaelement-js\bigplay.png" />
+    <Content Include="N2\Resources\mediaelement-js\bigplay.svg" />
+    <Content Include="N2\Resources\mediaelement-js\controls-ted.png" />
+    <Content Include="N2\Resources\mediaelement-js\controls-wmp-bg.png" />
+    <Content Include="N2\Resources\mediaelement-js\controls-wmp.png" />
+    <Content Include="N2\Resources\mediaelement-js\controls.png" />
+    <Content Include="N2\Resources\mediaelement-js\controls.svg" />
+    <Content Include="N2\Resources\mediaelement-js\flashmediaelement-cdn.swf" />
+    <Content Include="N2\Resources\mediaelement-js\flashmediaelement.swf" />
+    <Content Include="N2\Resources\mediaelement-js\loading.gif" />
+    <Content Include="N2\Resources\mediaelement-js\mediaelement-and-player.min.js" />
+    <Content Include="N2\Resources\mediaelement-js\mediaelement.min.js" />
+    <Content Include="N2\Resources\mediaelement-js\mediaelementplayer.css" />
+    <Content Include="N2\Resources\mediaelement-js\mediaelementplayer.js" />
+    <Content Include="N2\Resources\mediaelement-js\mediaelementplayer.min.css" />
+    <Content Include="N2\Resources\mediaelement-js\mediaelementplayer.min.js" />
+    <Content Include="N2\Resources\mediaelement-js\mejs-skins.css" />
+    <Content Include="N2\Resources\mediaelement-js\silverlightmediaelement.xap" />
+    <Content Include="N2\Resources\mediaelement-js\sizzle.min.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\index.html" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shAutoloader.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushBash.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushCpp.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushCSharp.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushCss.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushDiff.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushJava.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushJScript.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushPerl.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushPhp.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushPlain.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushPython.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushRuby.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushSass.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushSql.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushVb.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shBrushXml.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shCore.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\scripts\shLegacy.js" />
+    <Content Include="N2\Resources\syntaxhighlighter\styles\shCore.css" />
+    <Content Include="N2\Resources\syntaxhighlighter\styles\shCoreDefault.css" />
+    <Content Include="N2\Resources\syntaxhighlighter\styles\shThemeDefault.css" />
+    <Content Include="N2\Roles\Edit.aspx" />
+    <Content Include="N2\Roles\New.aspx" />
+    <Content Include="N2\Roles\Roles.aspx" />
+    <Content Include="N2\Search\ManageIndex.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Author.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Breadcrumb.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Changes.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\ChildPages.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Children.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\CurrentDate.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\CurrentTime.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Detail.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FacebookLike.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FirstChild.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FormCheckbox.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FormFile.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FormInput.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FormRadio.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FormSelect.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FormSubmit.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\FormTextarea.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\GooglePlus.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Link.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\NextSibling.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Parent.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\PreviousSibling.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Published.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Search.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\Siblings.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\StartPage.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\SyntaxHighlighter.ascx" />
+    <Content Include="N2\Tokens\TokenTemplates\TOC.ascx" />
+    <Content Include="N2\Users\Activity.aspx" />
+    <Content Include="N2\Users\Edit.aspx" />
+    <Content Include="N2\Users\New.aspx" />
+    <Content Include="N2\Users\Password.aspx" />
+    <Content Include="N2\Users\Users.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="N2\Web.config" />
+    <Content Include="N2\Top.master" />
+    <Content Include="N2\Simple.master" />
+    <Content Include="N2\Search\IndexInfo.ashx" />
+    <Content Include="N2\Resources\RedirectHandler.ashx" />
+    <Content Include="N2\Resources\MessageSink.ashx" />
+    <Content Include="N2\Resources\KeepAlive\Ping.ashx" />
+    <Content Include="N2\Resources\Js\plugins.ashx" />
+    <Content Include="N2\Resources\Js\jquery.ui.ashx" />
+    <Content Include="N2\Resources\Js\jquery-1.11.0.min.map" />
+    <Content Include="N2\Resources\IconHandler.ashx" />
+    <Content Include="N2\packages.config" />
+    <Content Include="N2\log4net.config" />
+    <Content Include="N2\Installation\UpgradeVersion.ashx" />
+    <Content Include="N2\Installation\system.diagnostics.trace.config" />
+    <Content Include="N2\Installation\log4net.config" />
+    <Content Include="N2\Installation\InstallerPage.Master" />
+    <Content Include="N2\Files\Resize.ashx" />
+    <Content Include="N2\Files\FileSystem\UploadFile.ashx" />
+    <Content Include="N2\Content\Navigation\SortUp.ashx" />
+    <Content Include="N2\Content\Navigation\SortDown.ashx" />
+    <Content Include="N2\Content\Navigation\MediaBrowserHandler.ashx" />
+    <Content Include="N2\Content\Navigation\LoadTree.ashx" />
+    <Content Include="N2\Content\LinkTracker\UpdateReferencesTo.ashx" />
+    <Content Include="N2\Content\Framed.master" />
+    <Content Include="N2\Collaboration\Ping.ashx" />
+    <Content Include="Dinamico\Themes\_ViewStart.cshtml" />
+    <Content Include="Dinamico\Themes\Web.config" />
+    <Content Include="Dinamico\Themes\MyTheme\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Default\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Default\Views\Test\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\StartPage\NotFound.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\StartPage\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Slideshow\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Slideshow\Galleria.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Slideshow\BootstrapGrid.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\_Layout.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\TOC.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\SubsequentSiblings.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\StartPage.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Siblings.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Search.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Published.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\PreviousSibling.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\PrecedingSiblings.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Parent.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\NextSibling.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\GooglePlus.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\FirstChild.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\FacebookLike.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Detail.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Children.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Changes.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Breadcrumb.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Author.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\Partials\ContentLink.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Translations.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\TopNavigation.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Top.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\SubNavigation.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\SiteMap.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Search.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\PreContent.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\PostContent.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Logotype.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\LogOn.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Header.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Head.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\FooterScripts.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Footer.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Content.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\BlogContent.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\Error.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Redirect\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Membership\Register.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Membership\LogOn.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Membership\ChangePasswordSuccess.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Membership\ChangePassword.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\LanguageIntersection\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\FreeForm\Submitted.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\FreeForm\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\FreeForm\Form.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\YouTube.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\TwoColumns.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\ThreeColumns.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\Teaser.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\Slider.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\Selection.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\Partials\GMapCoordinate.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\Partials\GMapAddress.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\LoginForm.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\Listing.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\ImageFloat.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\ImageAndText.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\Hyperlink.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\GMap.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\GDocViewer.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\FileList.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\DelimitedDataDisplay.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\ContentTile.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentParts\ContentSlider.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentPages\Selection.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentPages\News.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentPages\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\ContentPages\Container.cshtml" />
+    <Content Include="Dinamico\Themes\Default\lib\jquery\jquery-1.10.2.min.map" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\RegionDispatcher\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="N2\App_LocalResources\Login.aspx.resx" />
+    <Content Include="N2\Content\Activity\App_LocalResources\RecentActivity.ascx.resx" />
+    <Content Include="N2\Content\App_LocalResources\AffectedItems.ascx.resx" />
+    <Content Include="N2\Content\App_LocalResources\AvailableZones.ascx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Copy.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Delete.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Dependencies.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Edit.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\EditRecursive.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Framed.Master.resx" />
+    <Content Include="N2\Content\App_LocalResources\ItemInfo.ascx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Move.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\New.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Paste.aspx.resx" />
+    <Content Include="N2\Content\App_LocalResources\Toolbar.ascx.resx" />
+    <Content Include="N2\Content\Export\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\Export\App_LocalResources\Export.aspx.resx" />
+    <Content Include="N2\Content\Globalization\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\Globalization\App_LocalResources\Languages.ascx.resx" />
+    <Content Include="N2\Content\LinkTracker\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\LinkTracker\App_LocalResources\UpdateReferences.aspx.resx" />
+    <Content Include="N2\Content\Navigation\App_LocalResources\MediaBrowser.aspx.resx" />
+    <Content Include="N2\Content\Navigation\App_LocalResources\Navigation.resx" />
+    <Content Include="N2\Content\Navigation\App_LocalResources\Search.aspx.resx" />
+    <Content Include="N2\Content\Navigation\App_LocalResources\Settings.aspx.resx" />
+    <Content Include="N2\Content\Navigation\App_LocalResources\Table.aspx.resx" />
+    <Content Include="N2\Content\Navigation\App_LocalResources\Tree.aspx.resx" />
+    <Content Include="N2\Content\Security\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\Settings\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\Templates\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\Trash\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\Versions\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Content\Versions\App_LocalResources\RecentVersions.ascx.resx" />
+    <Content Include="N2\Content\Wizard\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Files\App_LocalResources\Default.aspx.resx" />
+    <Content Include="N2\Files\FileSystem\App_LocalResources\Directory.aspx.resx" />
+    <Content Include="N2\Files\FileSystem\App_LocalResources\File.aspx.resx" />
+    <Content Include="N2\Files\FileSystem\App_LocalResources\FileUpload.ascx.resx" />
+    <Content Include="N2\Myself\App_LocalResources\Wizards.ascx.resx" />
+    <Content Include="N2\Roles\App_LocalResources\Edit.aspx.resx" />
+    <Content Include="N2\Roles\App_LocalResources\New.aspx.resx" />
+    <Content Include="N2\Roles\App_LocalResources\Roles.aspx.resx" />
+    <Content Include="N2\Users\App_LocalResources\Edit.aspx.resx" />
+    <Content Include="N2\Users\App_LocalResources\New.aspx.resx" />
+    <Content Include="N2\Users\App_LocalResources\Password.aspx.resx" />
+    <Content Include="N2\Users\App_LocalResources\Users.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>36164</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:36164/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 封裝。請啟用 NuGet 封裝還原，以下載該封裝。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

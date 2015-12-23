@@ -1,0 +1,164 @@
+﻿@model WebApplication1.Models.Admin.RegionDispatcherViewModel
+@{
+    ViewBag.Title = "Region Dispatcher";
+}
+@{ 
+    
+    Html.Resources().StyleSheet(Url.ThemedContent("~/Content/busy.css"));
+    
+}
+
+    <style>
+        label
+        {
+            display: inline-block;
+        }
+
+    </style>
+
+
+
+<h2>Region Dispatcher</h2>
+@using (Ajax.BeginForm("Index", null, new AjaxOptions { HttpMethod="Post" , OnBegin="ajaxBeforeSend", OnComplete = "ajaxComplete", OnSuccess="ajaxSuccess", OnFailure="ajaxFailure" }, new {id="formDispatch"}))
+{
+    var i = 0;
+    <div class="emp">
+    <p>Source : @Model.Title  [ @Model.Url ]
+    
+    </p>
+    <p>dispatch destination : </p>
+    </div>
+    <ul class="langList">
+        <li><input type="checkbox" id="chkAll"/> All</li>
+    @foreach (var item in Model.AvailableLanguages)
+    { 
+        @*<li>@Html.CheckBox(String.Format("chkLang_{0}",item.CultureCode), item.Checked, new { value = item.CultureCode }) @Html.Label(item.LanguageTitle)</li>*@
+        <li>
+            @Html.CheckBoxFor(x => x.AvailableLanguages[i].Checked, new { CultureCode = item.CultureCode, langId = item.ItemID, @class="langCheck" }) 
+            @Html.LabelFor(x => x.AvailableLanguages[i].Checked,item.LanguageTitle)
+           @Html.HiddenFor(x => x.AvailableLanguages[i].LanguageTitle)
+            @Html.HiddenFor(x => x.AvailableLanguages[i].ItemID)
+            @Html.HiddenFor(x => x.AvailableLanguages[i].CultureCode)
+        </li>
+        i++;
+    }
+    </ul>
+    @Html.HiddenFor(x => x.Title)
+    @Html.HiddenFor(x => x.Name)
+    @Html.HiddenFor(x => x.Url)
+    @Html.EditorFor(x => x.IncludeChildren) @Html.LabelFor(x => x.IncludeChildren, "Include children")
+    <p>
+    <button type="button" id="btnDispatch">Submit</button>
+    </p>
+    
+    
+}
+
+
+<script type="text/javascript">
+    function ajaxBeforeSend() {
+        $.blockUI({ message: 'loading ...<span class="busyIcon">&nbsp;</span>' });
+    }
+
+    function ajaxComplete() {
+        $.unblockUI();
+    }
+
+    function ajaxSuccess(data) {
+        if (data.result) {
+            if (window.parent.n2ctx)
+                window.parent.n2ctx.refresh({ navigationUrl: data.navUrl, previewUrl: data.previewUrl, path: data.path, permission: data.permission });
+        }
+        else {
+            alert(data.message);
+        }
+    }
+
+    function ajaxFailure() {
+        alert('failed');
+    }
+
+    $(function () {
+        var check = true;
+        var totalLangs = $('.langCheck').length;
+        initDest();
+
+        if ($.cookie('dispatchDest') == null)
+            updateCookie();
+        $('.langCheck').change(function () {
+            updateCookie();
+            if ($('.langCheck:checked').length == totalLangs)
+                $('#chkAll').prop('checked', true);
+            else
+                $('#chkAll').prop('checked', false);
+        });
+        $('#btnDispatch').click(function () {
+            if ($('#IncludeChildren:checked').length == 1) {
+                if (!confirm('All children of selected destinations will be replaced by source node and its children, are you sure?'))
+                    return false;
+            }
+            var model = {
+                Title: $('#Title').val(),
+                Name: $('#Name').val(),
+                Url: $('#Url').val(),
+                IncludeChildren: $('#IncludeChildren').prop('checked'),
+                LangIds : []
+            };
+            $('#formDispatch .langCheck:checked').each(function () {
+                model.LangIds.push($(this).attr('langId'));
+            });
+
+            $.ajax({
+                url: '@Url.Action("Index")',
+                type: 'POST',
+                dataType: 'json',
+                data: $.toJSON({ model: model }),
+                beforeSend: ajaxBeforeSend,
+                complete: ajaxComplete,
+                success: ajaxSuccess,
+                error: ajaxFailure
+            });
+        });
+
+        $('.langCheck').each(function () {
+            if (!$(this).prop('checked')) {
+                check = false;
+                return false;
+            }
+        });
+        $('#chkAll').prop('checked', check);
+
+        $('#chkAll').click(function () {
+            if ($(this).prop('checked') == true) {
+                $('.langCheck').prop('checked', true);
+            }
+            else {
+                $('.langCheck').prop('checked', false);
+            }
+        });
+    });
+
+    function updateCookie() {
+        var langs = '';
+        $('.langCheck:checked').each(function (i, val) {
+            langs += $(this).attr('culturecode') + ',';
+        });
+        if (langs.length > 0)
+            langs = langs.substring(0, langs.length - 1);
+        $.cookie('dispatchDest', langs);
+    }
+
+    function initDest() {
+        if ($.cookie('dispatchDest')) {
+            var langs = $.cookie('dispatchDest').split(',');
+            $('.langCheck').attr('checked', false);
+            $.each(langs, function (i, val) {
+                var chk = $('.langCheck[culturecode=' + val + ']');
+                if (chk.length == 1)
+                    chk.attr('checked', true);
+            });
+        }
+
+    }
+</script>
+

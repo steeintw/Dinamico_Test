@@ -1,0 +1,21 @@
+﻿@model Dinamico.Models.ContentPart
+
+@{ Content.Define(re =>
+	   {
+		   re.Definition.Title = "2 Columns";
+		   re.Definition.IconUrl = "{IconsUrl}/text_columns.png";
+		   re.CheckBox("Separator", "Show separator");
+	   });
+}
+@if (Content.Data.Separator ?? false)
+{
+	<hr />
+}
+<div class="columns twocolumns row">
+	<div class="column span col-sm-6">
+		@{ Html.DroppableZone("Left").Render(); }
+	</div>
+	<div class="column column2 col-sm-6">
+		@{ Html.DroppableZone("Right").Render(); }
+	</div>
+</div>
